@@ -10,7 +10,7 @@ with magic(!), you'll probably want to combine this with other buildpacks using
 
 This buildpack finds all .scss and .sass files, and compiles them to files
 with the extension changed to .css and any parent directories named scss or
-sass changed to css. So ./scss/style.scss becomes ./css/style.css.
+sass changed to css. So `./scss/style.scss` becomes `./css/style.css`.
 
 If you think of a better way, [sethwklein][6] tries to keep up with pull
 requests and issues!
