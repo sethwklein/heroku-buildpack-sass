@@ -13,7 +13,7 @@ with the extension changed to .css and any parent directories named scss or
 sass changed to css. So ./scss/style.scss becomes ./css/style.css.
 
 If you think of a better way, [sethwklein][6] tries to keep up with pull
-requests!
+requests and issues!
 
 [1]: https://devcenter.heroku.com/articles/buildpacks#using-a-custom-buildpack
 [2]: https://www.heroku.com/
