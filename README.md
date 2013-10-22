@@ -12,8 +12,12 @@ This buildpack finds all .scss and .sass files, and compiles them to files
 with the extension changed to .css and any parent directories named scss or
 sass changed to css. So ./scss/style.scss becomes ./css/style.css.
 
+If you think of a better way, [sethwklein][6] tries to keep up with pull
+requests!
+
 [1]: https://devcenter.heroku.com/articles/buildpacks#using-a-custom-buildpack
 [2]: https://www.heroku.com/
 [3]: http://sass-lang.com/
 [4]: https://github.com/bwhmather/heroku-buildpack-compose
 [5]: https://github.com/ddollar/heroku-buildpack-multi
+[6]: https://github.com/sethwklein
