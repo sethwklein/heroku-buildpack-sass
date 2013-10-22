@@ -18,7 +18,7 @@ case $GEM_PATH in
 *)  export GEM_PATH="$cache/.gems" ;;
 esac
 
-find . -name '*.scss' -or -name '*.sass' | while read -r s_ss; do
+find "$build" -name '*.scss' -or -name '*.sass' | while read -r s_ss; do
     css=`echo "$s_ss" | sed '
 	s@/scss/@/css/@g
 	s/\.scss$/.css/
