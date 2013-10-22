@@ -8,7 +8,7 @@ if test -x "$cache"/.gems/bin/sass; then
     echo "-----> Using Sass"
 else
     echo -n "-----> Installing Sass $sass_version... "
-    mkdir -p $cache/.gems
+    mkdir -p "$cache"/.gems
     gem install --install-dir "$cache"/.gems --no-rdoc --no-ri --version "$sass_version" sass
 fi
 
