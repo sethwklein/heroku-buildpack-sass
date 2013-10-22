@@ -1,3 +1,6 @@
+heroku-buildpack-sass
+=====================
+
 heroku-buildpack-sass is a [custom buildpack][1] for [Heroku][2] that compiles
 [Sass][3]/SCSS files to CSS.
 
