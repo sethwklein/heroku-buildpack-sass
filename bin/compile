@@ -5,9 +5,9 @@ cache=$2
 sass_version=3.2.12
 
 if test -x "$cache"/.gems/bin/sass; then
-    echo "-----> Using sass"
+    echo "-----> Using Sass"
 else
-    echo -n "-----> Installing sass $sass_version... "
+    echo -n "-----> Installing Sass $sass_version... "
     mkdir -p $cache/.gems
     gem install --install-dir "$cache"/.gems --no-rdoc --no-ri --version "$sass_version" sass
 fi
