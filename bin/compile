@@ -1,0 +1,37 @@
+#!/bin/sh
+
+build=$1
+cache=$2
+sass_version=3.2.12
+
+if test -x "$cache"/.gems/bin/sass; then
+    echo "-----> Using sass"
+else
+    echo -n "-----> Installing sass $sass_version... "
+    mkdir -p $cache/.gems
+    gem install --install-dir "$cache"/.gems --no-rdoc --no-ri --version "$sass_version" sass
+fi
+
+PATH="$PATH:$cache/.gems/bin"
+case $GEM_PATH in
+.*) export GEM_PATH="$GEM_PATH:$cache/.gems" ;;
+*)  export GEM_PATH="$cache/.gems" ;;
+esac
+
+find . -name '*.scss' -or -name '*.sass' | while read -r s_ss; do
+    css=`echo "$s_ss" | sed '
+	s@/scss/@/css/@g
+	s/\.scss$/.css/
+	s@/sass/@/css/@g
+	s/\.sass$/.css/
+    '`
+    dir=`dirname "$css"`
+    if ! test -d "$dir"; then
+	echo -n "-----> Creating directory $dir... "
+	mkdir -p "$dir"
+	echo
+    fi
+    echo -n "-----> Compiling $s_ss to $css... "
+    sass --force --cache-location "$cache"/sass-cache "$s_ss" "$css"
+    echo
+done

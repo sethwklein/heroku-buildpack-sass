@@ -1,0 +1,9 @@
+#!/bin/sh
+
+build=$1
+
+if find "$build" -name '*.scss' -or -name '*.sass' >/dev/null; then
+    echo "Sass"
+    exit 0
+fi
+exit 1
